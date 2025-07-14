@@ -1,0 +1,34 @@
+package com.example.demo.controller;
+
+import com.org.example.model.Sight;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import com.org.example.crawler.KeelungSightsCrawler;
+
+import java.io.IOException;
+import java.util.*;
+//run and enter http://127.0.0.1:8080/SightAPI?zone=七堵
+@RestController
+public class SightController {
+    @GetMapping("/SightAPI")
+    //@RequestParam is used to extract data from the query parameters of a request URL
+    //?zone="七堵" 會擷取七堵
+    public ResponseEntity<Sight[]> getItems(@RequestParam String zone) {
+        KeelungSightsCrawler crawler = new KeelungSightsCrawler();
+        Sight errorSight = new Sight();
+        try{
+            Sight[] crawlSights=crawler.getItems(zone);
+            return  crawlSights != null ? ResponseEntity.ok(crawlSights):
+                                          ResponseEntity.notFound().build();//build建立一個沒有內容的ResponseEntity
+        }
+        catch (IOException e) {
+            errorSight.setSightName("Error: Please check your network connection or the website URL. Reason: %s".formatted(e.getMessage()));
+            return ResponseEntity.internalServerError().body(new Sight[] { errorSight });
+        }
+        catch (NullPointerException e) {
+            errorSight.setSightName("No results. Please enter a valid Keelung City zone.");
+            return ResponseEntity.badRequest().body(new Sight[] { errorSight });
+        }
+    }
+}
