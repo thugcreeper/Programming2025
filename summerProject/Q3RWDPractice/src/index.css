@@ -4,10 +4,15 @@
 
 
 
-@layer components{
+@layer components {
   button {
-    @apply bg-blue-600 text-black text-2xl md:text-3xl lg:text-4xl px-10 py-5 rounded;
-    @apply hover:bg-blue-600 hover:text-[#ffda55] transition duration-300 transform hover:scale-110;
+    @apply w-48 max-sm:w-24 max-sm:h-12 sm:w-44 md:w-48 lg:w-48;
+    @apply px-10 py-5 max-sm:px-5 max-sm:py-2 sm:px-8 sm:py-4;
+    @apply bg-blue-600 text-black text-center inline-block text-2xl max-sm:text-sm sm:text-2xl md:text-3xl lg:text-4xl;
+    @apply font-semibold rounded;
+    @apply hover:bg-blue-700 hover:text-[#ffda55];
+    @apply transition duration-300 transform hover:scale-110;/*放大按鈕1.1倍*/
+    @apply whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-yellow-400;/*點擊時會有黃色外框*/
   }
 }
 

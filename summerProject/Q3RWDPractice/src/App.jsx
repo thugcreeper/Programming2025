@@ -28,15 +28,17 @@ function App() {
   return (
     <div className="w-full min-h-screen bg-gradient-to-b from-blue-100 to-blue-300 px-4 py-6">
       {/*max-md表示width < 48rem(768px)*/}
-      <h1 className="max-sm:text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-red-500 my-5 mb-20 font-serif">基隆市景點瀏覽器</h1>
+      <a href='https://www.travelking.com.tw/tourguide/taiwan/keelungcity/' target='_blank' rel='noopener noreferrer'>
+        <h1 className="max-sm:text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-red-500 my-5 mb-20 font-serif ">基隆市景點瀏覽器</h1>
+      </a>
       <div className="flex flex-wrap gap-x-4 gap-y-2 justify-center">
-        <button onClick={() => handleFetch('中山區')}>中山區</button>
-          <button onClick={() => handleFetch('信義區')}>信義區</button>
-          <button onClick={() => handleFetch('仁愛區')}>仁愛區</button>
-          <button onClick={() => handleFetch('中正區')}>中正區</button>
-          <button onClick={() => handleFetch('安樂區')}>安樂區</button>
-          <button onClick={() => handleFetch('七堵區')}>七堵區</button>
-          <button onClick={() => handleFetch('暖暖區')}>暖暖區</button>
+        <button onClick={() => handleFetch('中山區')} >中山區</button>
+          <button onClick={() => handleFetch('信義區')} >信義區</button>
+          <button onClick={() => handleFetch('仁愛區')} >仁愛區</button>
+          <button onClick={() => handleFetch('中正區')} >中正區</button>
+          <button onClick={() => handleFetch('安樂區')} >安樂區</button>
+          <button onClick={() => handleFetch('七堵區')} >七堵區</button>
+          <button onClick={() => handleFetch('暖暖區')} >暖暖區</button>
       </div>
       <div id="searchingHint" className='hidden text-center text-2xl font-bold text-blue-800 mt-10'>
         搜尋中...
