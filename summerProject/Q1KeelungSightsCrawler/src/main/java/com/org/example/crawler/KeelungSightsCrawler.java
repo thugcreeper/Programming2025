@@ -34,7 +34,22 @@ public class KeelungSightsCrawler{
                             //select the elements with temprop="address" and select its content attribute
                             mysight.setAddress(sitePage.select("meta[itemprop=address]").attr("content"));
                             mysight.setCategory(sitePage.select("span[property='rdfs:label']").text());
-                            mysight.setDescription(sitePage.select("meta[itemprop=description]").attr("content"));
+                            String description = sitePage.select("meta[itemprop=description]").attr("content");
+                            if(description != null && !description.isEmpty()){
+                                mysight.setDescription(description);
+                            }
+                            else{
+                                Elements firstDiv=sitePage.select("div[property=dc:description]");
+                                if(firstDiv != null){
+                                    Element p = firstDiv.selectFirst(".point_list > p");
+                                    if (p != null) {
+                                        mysight.setDescription(p.text());
+                                    }
+                                    else {
+                                        System.out.println("Can't find description");
+                                    }
+                                }
+                            }
                             mysight.setMapURL(sitePage.select("div.address a").attr("href"));
                             String imgURL=sitePage.select("meta[itemprop=image]").attr("content");
                             if(imgURL != null && !imgURL.isEmpty()){

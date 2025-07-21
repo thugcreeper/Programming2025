@@ -4,7 +4,7 @@ import com.org.example.model.Sight;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import com.org.example.crawler.KeelungSightsCrawler;
+import com.org.crawler.KeelungSightsCrawler;
 
 import java.io.IOException;
 import java.util.*;

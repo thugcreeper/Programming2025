@@ -1,4 +1,4 @@
-package com.org.example.crawler;
+package com.org.crawler;
 import java.util.*;
 import com.org.example.model.Sight;
 import org.jsoup.Jsoup;

@@ -1,14 +1,12 @@
-package org.example.crawler;
-
-import org.example.model.Sight;
-import java.io.IOException;
+package com.org.crawler;
+import com.org.example.model.Sight;
 import java.io.IOException;
 
 public class KeelungSightsCrawlerTest {
     public static void main(String[] args) {
         KeelungSightsCrawler crawler = new KeelungSightsCrawler();
         try{
-            Sight[] sights = crawler.getItems("七堵");
+            Sight[] sights = crawler.getItems("信義");
             for (Sight s : sights){
                 System.out.println(s);
             }
