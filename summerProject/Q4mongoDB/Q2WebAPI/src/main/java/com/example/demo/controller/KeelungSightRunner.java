@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import com.org.example.model.Sight;
+import com.org.model.Sight;
 import com.example.demo.repository.SightRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -19,12 +19,12 @@ public class KeelungSightRunner implements ApplicationRunner {
     private SightRepository KeelungSightRepo;
 
     ArrayList<Sight[]> sights = new ArrayList<Sight[]>();
+
     @Override
     public void run(ApplicationArguments args) throws Exception {
         System.out.println("Call KeelungSight crawler");
         KeelungSightsCrawler crawler = new KeelungSightsCrawler();
         int totalLength=0;
-        KeelungSightRepo.deleteAll();
         for(int i=0;i<districts.length;i++){//測試完記得改成districts.length
             try{
                 Sight[] sights = crawler.getItems(districts[i]);

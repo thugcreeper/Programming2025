@@ -1,5 +1,5 @@
 package com.example.demo.repository;
-import com.org.example.model.Sight;
+import com.org.model.Sight;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

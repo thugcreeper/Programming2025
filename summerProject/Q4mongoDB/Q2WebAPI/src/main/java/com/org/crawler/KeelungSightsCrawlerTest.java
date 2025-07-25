@@ -1,5 +1,5 @@
 package com.org.crawler;
-import com.org.example.model.Sight;
+import com.org.model.Sight;
 import java.io.IOException;
 
 public class KeelungSightsCrawlerTest {
