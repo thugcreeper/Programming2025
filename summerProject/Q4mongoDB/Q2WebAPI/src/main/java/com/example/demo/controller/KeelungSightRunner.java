@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import com.example.demo.service.deleteSights;
+import com.example.demo.service.findAllSight;
 import com.org.model.Sight;
 import com.example.demo.repository.SightRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +26,10 @@ public class KeelungSightRunner implements ApplicationRunner {
     public void run(ApplicationArguments args) throws Exception {
         System.out.println("Call KeelungSight crawler");
         KeelungSightsCrawler crawler = new KeelungSightsCrawler();
+        findAllSight finder = new findAllSight(KeelungSightRepo);
+        deleteSights deleter = new deleteSights(KeelungSightRepo);
         int totalLength=0;
+
         for(int i=0;i<districts.length;i++){//測試完記得改成districts.length
             try{
                 Sight[] sights = crawler.getItems(districts[i]);
@@ -42,6 +47,13 @@ public class KeelungSightRunner implements ApplicationRunner {
                 System.out.println(s);
             }
         }
+
+        /*Testing
+        System.out.println("Fetching all sights from database...");
+        finder.showAllSights();
+        String deleteZone = "仙洞巖";
+        deleter.deleteByName(deleteZone);
+        */
 
     }
 }

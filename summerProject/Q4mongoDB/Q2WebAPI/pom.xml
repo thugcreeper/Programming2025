@@ -57,6 +57,22 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 		</dependency>
+		<dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongodb-driver-bom</artifactId>
+            <version>5.5.1</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+		<dependency>
+			<groupId>org.mongodb</groupId>
+			<artifactId>mongodb-driver-sync</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.github.cdimascio</groupId>
+			<artifactId>java-dotenv</artifactId>
+			<version>5.2.2</version>
+		</dependency>
 	</dependencies>
 
 	<build>

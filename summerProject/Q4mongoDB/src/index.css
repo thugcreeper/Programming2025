@@ -18,6 +18,7 @@
 
 @layer components {
   #addrButton {
+    @apply w-24 mb-2 mt-2;
     @apply inline-block px-3 py-1 max-sm:text-lg sm:text-xl md:text-2xl bg-gray-500 text-white rounded;
     @apply hover:bg-black transition duration-300 transform hover:scale-110;
   }
@@ -33,6 +34,7 @@
 }
 @layer components{
   .moreInfobtn {
+    @apply w-32 mb-2 mt-2;
     @apply inline-block px-3 py-1 max-sm:text-lg sm:text-xl md:text-2xl bg-gray-500 text-white rounded;
     @apply hover:bg-black transition duration-300 transform hover:scale-110;
   }
