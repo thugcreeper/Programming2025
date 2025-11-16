@@ -32,13 +32,13 @@ function App() {
         <h1 className="max-sm:text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-red-500 my-5 mb-20 font-serif ">基隆市景點瀏覽器</h1>
       </a>
       <div className="flex flex-wrap gap-x-4 gap-y-2 justify-center">
-        <button onClick={() => handleFetch('中山區')} >中山區</button>
-          <button onClick={() => handleFetch('信義區')} >信義區</button>
-          <button onClick={() => handleFetch('仁愛區')} >仁愛區</button>
-          <button onClick={() => handleFetch('中正區')} >中正區</button>
-          <button onClick={() => handleFetch('安樂區')} >安樂區</button>
-          <button onClick={() => handleFetch('七堵區')} >七堵區</button>
-          <button onClick={() => handleFetch('暖暖區')} >暖暖區</button>
+        <button onClick={() => handleFetch('中山')} >中山區</button>
+          <button onClick={() => handleFetch('信義')} >信義區</button>
+          <button onClick={() => handleFetch('仁愛')} >仁愛區</button>
+          <button onClick={() => handleFetch('中正')} >中正區</button>
+          <button onClick={() => handleFetch('安樂')} >安樂區</button>
+          <button onClick={() => handleFetch('七堵')} >七堵區</button>
+          <button onClick={() => handleFetch('暖暖')} >暖暖區</button>
       </div>
       <div id="searchingHint" className='hidden text-center text-2xl font-bold text-blue-800 mt-10'>
         搜尋中...
@@ -57,7 +57,8 @@ function App() {
               <p className="max-sm:text-lg sm:text-xl md:text-2xl font-semibold text-indigo-700">區域: {item.zone}</p>
               <p className="max-sm:text-lg sm:text-xl md:text-2xl font-semibold text-teal-700">分類: {item.category}</p>
               <p className="max-sm:text-lg sm:text-xl md:text-2xl font-semibold text-pink-700">
-                <button id="addrButton" onClick={() => window.open(`${item.mapURL}`, '_blank')}>地址</button>&nbsp;{item.address}
+                <button id="addrButton" onClick={() => window.open(`${item.mapURL}`, '_blank')}>地址</button>
+                <p>{item.address}</p>
               </p>
               <button
                 id={`moreInfobtn-${index}`}

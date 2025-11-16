@@ -1,0 +1,22 @@
+Problem Description
+Design a program (C or C++) that uses multiple child processes to check whether numbers within a given range are prime numbers.
+
+Requirements
+The parent process reads the starting number and ending number from user input
+Create 3 child processes, each responsible for checking a portion of the range
+After all child processes complete, the parent process counts and reports the total number of prime numbers found
+Learning Objectives
+fork() system call
+Work distribution among processes
+wait() system call
+Sample Output (4 child processes)
+Enter range: 1 100
+Child process 1 handles range: 1-25
+Child process 2 handles range: 26-50
+Child process 3 handles range: 51-75
+Child process 4 handles range: 76-100
+Child process 1 found 9 prime numbers
+Child process 2 found 6 prime numbers
+Child process 3 found 5 prime numbers
+Child process 4 found 5 prime numbers
+Total prime numbers found: 25

@@ -1,0 +1,4 @@
+1.xampp開啟apache mysql
+2.進入local host並登入
+3.php檔案放到 C:\xampp\htdocs下
+4.輸入http:localhost/檔案名.php即可
